@@ -1,0 +1,18 @@
+<h1> Name: <%= @kaiju.name %> </h1>
+<p> Size: <%= @kaiju.size %> </p>
+<p> Category: <%= @kaiju.category %> </p>
+<p> Description: <%= @kaiju.description %> </p>
+
+<ul>
+  <% @kaiju.works.each do |work| %>
+    <li> <%= work.title %> </li>
+  <% end %>
+</ul>
+
+<img src="<%=@kaiju.image%>" alt="Godzilla shadow" style="height: <%= @kaiju.size * 20 %>px"/>
+<img src="http://www.freevectors.net/files/large/FreeVectorHumanSilhouette.jpg" alt="human" style="height: 40px" />
+<div>
+  <%= link_to "Edit Kaiju", edit_kaiju_path(@kaiju) %>
+  <br>
+  <%= link_to "Remove Kaiju", kaiju_path(@kaiju), method: :delete %>
+</div>

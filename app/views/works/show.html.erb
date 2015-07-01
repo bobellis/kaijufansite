@@ -1,0 +1,9 @@
+<h1> Title: <%= @work.title %> </h1>
+<p> Category: <%= @work.category %></p>
+<p> Author: <%= @work.author %></p>
+<p> Actors: <%= @work.actors %></p>
+<p> Description: <%= @work.description %></p>
+
+<%= link_to "Edit Work", edit_work_path(@work) %>
+<br>
+<%= link_to "Delete Work", work_path(@work), method: :delete %>

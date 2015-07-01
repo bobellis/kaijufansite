@@ -1,0 +1,20 @@
+<%= form_for @kaiju do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :size %>
+  <%= f.number_field :size %>
+
+  <%= f.label :category %>
+  <%= f.text_field :category %>
+
+  <%= f.label :description %>
+  <%= f.text_area :description %>
+
+  <%= f.label :image %>
+  <%= f.text_field :image %>
+
+  <%= collection_check_boxes(:kaiju, :work_ids, Work.all, :id, :title) %>
+
+ <%= f.submit %>
+<% end %>
